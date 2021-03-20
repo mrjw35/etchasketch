@@ -1,21 +1,20 @@
-
-
-
 const container = document.getElementById("grid");
 
  function monkey() {
-  var number = prompt("Please enter number lower that 64", "32");
-  if ( (number <= 64) && (number != null)) {
-    makeRows(number, number);
+    var number = prompt("Please enter number lower that 100", "64");
+    if ( (number <= 100) && (number != 0)) { 
+      makeRows(number, number);
+    }
+    else {
+      location.reload();
+    }
+    const test = document.querySelectorAll('.grid-item');
+    for (var i = 0 ; i < test.length; i++) {
+      test[i].addEventListener('mouseover' ,color)  
   }
-  else {
-    return monkey();
-  }
-  const test = document.querySelectorAll('.grid-item');
-   for (var i = 0 ; i < test.length; i++) {
-     test[i].addEventListener('mouseover' ,color)  
-  }
-}
+} 
+
+
 
 
 function makeRows(rows, cols) {
@@ -27,8 +26,6 @@ function makeRows(rows, cols) {
     container.appendChild(cell).className = "grid-item";
   };
 };
-
-
 
 function color(){
 
@@ -42,9 +39,24 @@ function color(){
     }
   this.style.background = random_bg_color();
 };
+  
+function whiteWash(){
+  //window.location.reload();
+  var bgColor = `rgb(256,256,256)`;
+  const test = document.querySelectorAll('.grid-item');
+   for (var i = 0 ; i < test.length; i++) {
+     test[i].style.background = bgColor; 
+  }
+}
 
+function allBlack(){
+  var bgColor = `rgb(0,0,0)`;
+  const test = document.querySelectorAll('.grid-item');
+   for (var i = 0 ; i < test.length; i++) {
+     test[i].style.background = bgColor; 
+  }
 
-
+}
 
 
 

@@ -4,20 +4,20 @@
 }
 
 #container{
-  max-width: 520px;
+  max-width: 600px;
   margin: 0 auto;
-  border: 1px solid ;
+  border: 3px solid ;
 }
 #grid {
   display: grid;
-  max-width: 500px;
-  min-height: 500px;
+  max-width: auto;
+  min-height: 600px;
   border: 1px solid var(--border);
   grid-template-rows: repeat(vara(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 .grid-item {
- padding: 0px;
+ padding: 0;
  border: 1px solid #ddd;
 }
 
