@@ -1,8 +1,9 @@
 const container = document.getElementById("grid");
 
  function monkey() {
-    var number = prompt("Please enter number lower that 100", "64");
-    if ( (number <= 100) && (number != 0)) { 
+   number = prompt("Please enter number lower that 100", "64");
+   number=Math.round(number);
+    if ( (number <= 100) && (number != 0)&& number !=null) { 
       makeRows(number, number);
     }
     else {
@@ -10,15 +11,18 @@ const container = document.getElementById("grid");
     }
     const test = document.querySelectorAll('.grid-item');
     for (var i = 0 ; i < test.length; i++) {
-      test[i].addEventListener('mouseover' ,color)  
-  }
+      
+      test[i].addEventListener('mouseover' ,color)
+      console.log('mouseover');  
+      
+}
 } 
 
 
 
 
 function makeRows(rows, cols) {
-  container.style.setProperty('--grid-rows', rows);
+;  container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
     let cell = document.createElement("div");
@@ -34,10 +38,11 @@ function color(){
    var y = Math.floor(Math.random() * 256);
    var z = Math.floor(Math.random() * 256);
    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-   console.log(bgColor);
+   //console.log(bgColor);
    return bgColor;
     }
-  this.style.background = random_bg_color();
+    // this.innerText = random_bg_color();
+    this.style.background = random_bg_color();
 };
   
 function whiteWash(){
@@ -59,7 +64,9 @@ function allBlack(){
 }
 
 
-
+function restart(){
+  //location.reload();
+}
   
 
 
